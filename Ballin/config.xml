@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ballin.basketball" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Ballin</name>
+    <description>
+        Basketball and Streetball App
+    </description>
+    <author email="head@ballin.at" href="https://www.ballin.at">
+        Ballin Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="14" />
+
+    
+
+    <platform name="android">
+        <icon density="ldpi" src="www/icon.png" />
+        <splash density="land-ldpi" src="www/icon.png" />
+    </platform>
+</widget>
