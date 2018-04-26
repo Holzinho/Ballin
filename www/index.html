@@ -11,6 +11,7 @@
     <title>My App</title>
     <!-- Path to Framework7 Library CSS -->
     <link rel="stylesheet" href="css/framework7.min.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
 
@@ -36,11 +37,31 @@
         <!-- Initial Page, "data-name" contains page name -->
         <div data-name="home" class="page">
 
+          <!-- Right Panel with Cover effect -->
+          <div class="panel panel-right panel-cover">
+              <div class="content-block">
+                <p>Hallo Welt</p>
+                <!-- Click on link with "panel-close" class will close panel -->
+                <p><a href="#" class="panel-close">Close me</a></p>
+                <!-- Click on link with "panel-open" and data-panel="left" attribute will open Left panel -->
+                <p></p>
+              </div>
+            </div>
+
+            ...
+            <div class="page-content">
+              <div class="content-block">
+                <!-- Click on link with "panel-open" and data-panel="right" attribute will open Right panel -->
+                <p><a href="#" data-panel="right" class="panel-open">Open Right Panel</a></p>
+              </div>
+            </div>
+
           <!-- Top Navbar -->
           <div class="navbar">
             <div class="navbar-inner">
-              <!--<div class="title">Awesome App</div>-->
-              <img id="ballin-logo" src="img/Ballin_icon_transparent.png" alt="ballin_logo">
+              <!--<img id="ballin-logo" src="img/Ballin_icon_transparent.png" alt="ballin_logo">-->
+              <div class="title">Ballin Basketball</div>
+              
             </div>
           </div>
 
@@ -49,13 +70,15 @@
             <div class="toolbar-inner">
               <!-- Toolbar links -->
               <a href="#" class="link">Link 1</a>
-              <a href="#" class="link">Link 2</a>
+              <a href="#" data-panel="left" class="panel-open link"><i class="f7-icons size-22">bars</i></a>
             </div>
           </div>
 
           <!-- Scrollable page content -->
           <div class="page-content">
             <p>Page content goes here</p>
+
+                
             <!-- Link to another page -->
             <a href="/about/">About app</a>
           </div>
