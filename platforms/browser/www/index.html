@@ -15,16 +15,7 @@
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/my-app.css">
 
-    <script>
-      
-      document.addEventListener("deviceready", starteApp, false);
-
-      var starteApp = function(){
-        alert.log('Hallo Ballin.....');
-      };
-
-
-    </script>
+    
   </head>
   <body>
     <!-- App root element -->
@@ -71,7 +62,10 @@
 
           <!-- Scrollable page content -->
           <div class="page-content">
-            <p>Page content goes here</p>     
+            <p>Page content goes here</p>
+            
+            <div id="map"></div>
+            
             <!-- Link to another page -->
             <a href="/about/">About app</a>
           </div>
@@ -82,7 +76,45 @@
     <script type="text/javascript" src="cordova.js"></script>
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="js/framework7.min.js"></script>
+    <!-- Google Maps Key und Refferent Link -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6XW_eqLMPMuDEk0P1N0y3EGNWxDANpnc&callback=initMap"></script>
+    <!-- Verlinkung auf die Map.js-->
+    <script src="js/map.js"></script>
     <!-- Path to your app js-->
     <script type="text/javascript" src="js/my-app.js"></script>
+    <script>
+      
+      var starteApp = function(){
+        console.log('Phonegap ist geladen...');
+      };
+
+      var appImHintergrund = function(){
+        console.log('Phonegap läuft im Hintergrund');
+      };
+
+      var appWiederVordergrund = function(){
+        console.log('Phonegap läuft wieder im Vordergrund');
+      };
+
+      var appOnline = function(){
+        console.log('Phonegap ist Online');
+      };
+
+      var appOffline = function(){
+        console.log('Phonegap ist Offline');
+      };
+
+      var backButton = function(){
+        console.log('doppelt klicken um die App zu schließen');
+      };
+
+      document.addEventListener("deviceready", starteApp, false);
+      document.addEventListener("pause", appImHintergrund, false);
+      document.addEventListener("resume", appWiederVordergrund, false);
+      document.addEventListener("online", appOnline, false);
+      document.addEventListener("offline", appOffline, false);
+      document.addEventListener("backbutton", backButton, false); //nur Android
+
+    </script>
   </body>
 </html>
